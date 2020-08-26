@@ -8,7 +8,7 @@ const index=require('./routes/index');
 var app = express();
 // const index=require("./routes/index")
 //const uri="mongodb://localhost/test3";
-// const uri="mongodb+srv://jeno:tshimwana@vivrex.klvrq.mongodb.net/test3?retryWrites=true&w=majority";
+const uri="mongodb+srv://jeno:tshimwana@vivrex.klvrq.mongodb.net/yesu?retryWrites=true&w=majority";
 
 
 
@@ -72,14 +72,14 @@ app.use(index);
 // })
 
  
-// mongoose.connect("mongodb+srv://jeno:tshimwana@vivrex.klvrq.mongodb.net/test3?retryWrites=true&w=majority").then(
-//   result=>{
-//       app.listen(process.env.PORT || 3000);
-//      //console.log(req.user);
-//   }
-// ).catch(
-//   err=>{
-//       console.log(err);
-//   }
-// );
-app.listen(process.env.PORT || 3000);
+mongoose.connect("mongodb+srv://jeno:tshimwana@vivrex.klvrq.mongodb.net/test3?retryWrites=true&w=majority").then(
+  result=>{
+      app.listen(process.env.PORT || 3000);
+     //console.log(req.user);
+  }
+).catch(
+  err=>{
+      console.log(err);
+  }
+);
+// app.listen(process.env.PORT || 3000);
