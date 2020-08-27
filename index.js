@@ -1,5 +1,6 @@
 const mongoose=require('mongoose');
 // const multer=require('multer');
+var cors = require('cors');
 var express = require("express");
 var bodyParser = require("body-parser");
 const index=require('./routes/index');
@@ -61,11 +62,16 @@ const uri="mongodb+srv://jeno:tshimwana@vivrex.klvrq.mongodb.net/yesu?retryWrite
 //     })
 //     .catch(err => console.log(err));
 // });
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 // app.use(express.static("public"));
-
+app.use(cors(corsOptions));
 app.use(index);
 // app.use((req,res)=>{
 //   res.status(404).render("404",{path:"",user:req.user});
