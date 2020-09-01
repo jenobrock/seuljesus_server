@@ -70,7 +70,7 @@ var corsOptions = {
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-// app.use(express.static("public"));
+app.use(express.static("public"));
 app.use(cors(corsOptions));
 app.use(index);
 // app.use((req,res)=>{
@@ -78,7 +78,7 @@ app.use(index);
 // })
 
  
-mongoose.connect("mongodb+srv://jeno:tshimwana@vivrex.klvrq.mongodb.net/test3?retryWrites=true&w=majority").then(
+mongoose.connect("mongodb+srv://jeno:tshimwana@vivrex.klvrq.mongodb.net/yesu?retryWrites=true&w=majority").then(
   result=>{
       app.listen(process.env.PORT || 3000);
      //console.log(req.user);

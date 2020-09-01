@@ -27,10 +27,12 @@ const signUpUser = (req, res) => {
   const mail = req.body.mail;
   const pass1 = req.body.password;
   const pass2 = req.body.password2;
+  console.log(req.body);
   if (pass1 !== pass2) {
     console.log('erreur password')
     return res.json('100');
-  } else {
+  }
+   else {
 
     User.findOne({ phone: phone })
       .then(user => {
@@ -87,7 +89,7 @@ const signInUser = (req, res) => {
         //   console.log(err);
         //   res.redirect('/');
         // });
-        res.json('201');
+        res.json({"code":'201',user1});
       } else {
         console.log("password incorrect");
         res.json('103')
