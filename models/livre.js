@@ -2,20 +2,20 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
 
-const media = new schema({
-    nom: {
+const livre = new schema({
+    titre: {
         type: String,
         required: true,
     },
-    type: {
+    langue: {
         type: String,
         required: true,
     },
-    short: {
+    auteur: {
         type: String,
         required: true,
     },
-    detail: {
+    description: {
         type: String,
         required: true,
     },
@@ -23,21 +23,15 @@ const media = new schema({
         type: String,
         required: true,
     },
-    local: {
+    lien: {
         type: String,
         required: true,
     }
-    , online: {
-        type: String,
-        required: true,
-    }, auteur : {
-        type: String,
-        required: true
-    }, conlusion : {
-        type : String,
-        required: true
-    }
+    // , online: {
+    //     type: String,
+    //     required: true,
+    // }
 
 });
 
-module.exports = mongoose.model('media', media);
+module.exports = mongoose.model('livre', livre);
